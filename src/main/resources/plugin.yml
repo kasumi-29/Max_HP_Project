@@ -1,0 +1,10 @@
+name: Max_hp
+version: ${project.version}
+main: kun.minecraft.max_hp.max_hp.Max_hp
+api-version: 1.15
+description: "プレイヤーの最大体力を設定できるプラグインです。"
+
+commands:
+  sethp:
+    description: "最大HPを設定します"
+    usage: "/<command>"
