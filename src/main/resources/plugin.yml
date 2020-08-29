@@ -1,10 +1,24 @@
 name: Max_hp
 version: ${project.version}
-main: kun.minecraft.max_hp.max_hp.Max_hp
+main: kun.minecraft_plugin.max_hp.max_hp.Max_hp
 api-version: 1.15
 description: "プレイヤーの最大体力を設定できるプラグインです。"
+author: "kasumi-29 (kasumigaura)"
+website: "https://github.com/kasumi-29/Max_HP_Project"
 
 commands:
-  sethp:
-    description: "最大HPを設定します"
-    usage: "/<command>"
+  set-hp:
+    description: "最大HPを設定します。<MaxHP>は、ハート0.5個分で1とカウントし、1以上の値を取ります。\
+    ここで設定した値は、終了時に config.yml へ書き込まれます。"
+    permission: op
+    usage: "/<command> [Player] <MaxHP>"
+  set-default-hp:
+    description: "デフォルトの最大HPを設定します。config.ymlと現在接続中の全員に即時、反映されます。"
+    permission: op
+    usage: "/<command> <MaxHP>"
+  super-effect:
+    description: "effectコマンドと全く同じ働きをします。\
+    /effect give ** minecraft:health_boost は、死亡していないのに死亡した表記になる場合があります。\
+    このプラグインは、health_boostをデフォルトで警告を表示させますが、この警告を無視し、health_boostを付与したい場合に利用します。"
+    permission: op
+    usage: "/effect に準じる"

@@ -1,2 +1,10 @@
 default: 20
 
+Player:
+  roadhog_kun:
+    UUID: 132627b1-6398-494b-9687-de73d4083696
+    HP: 20
+  Nishito_31:
+    UUID: 44a4f287-e09a-4ff9-97c4-23ae18d4b4f5
+    HP: 20
+
