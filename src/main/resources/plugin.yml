@@ -9,7 +9,7 @@ website: "https://github.com/kasumi-29/Max_HP_Project"
 commands:
   set-hp:
     description: "最大HPを設定します。<MaxHP>は、ハート0.5個分で1とカウントし、1以上の値を取ります。\
-    ここで設定した値は、終了時に config.yml へ書き込まれます。"
+    ここで設定した値は、 config.yml へ即時、反映されます。"
     permission: op
     usage: "/<command> [Player] <MaxHP>"
   set-default-hp:

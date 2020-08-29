@@ -48,6 +48,8 @@ public final class Max_hp extends JavaPlugin {
             }
             setHP(player,hp);
             Player_HP.put(player.getUniqueId(),hp);
+            save_Pdata(player.getUniqueId(),hp,getConfig().getConfigurationSection("Player"));
+            saveConfig();
             return true;
         });
         Objects.requireNonNull(getCommand("set-default-hp")).setTabCompleter((sender, command, alias, args) -> new ArrayList<>());
@@ -83,6 +85,10 @@ public final class Max_hp extends JavaPlugin {
         CONF_write();
     }
 
+    public boolean Check_Custom(UUID uid){
+        return Player_HP.containsKey(uid);
+    }
+
     private void CONF_read(){
         ConfigurationSection conf=getConfig().getConfigurationSection("Player");
         assert conf != null;
@@ -98,12 +104,15 @@ public final class Max_hp extends JavaPlugin {
         ConfigurationSection conf=getConfig().getConfigurationSection("Player");
         assert conf != null;
         for (Map.Entry<UUID,Integer> Pdata:Player_HP.entrySet()){
-            String Pname= getServer().getOfflinePlayer(Pdata.getKey()).getName();
-            if(Pname==null){continue;}//一度もこのサーバーに入ったことがないので、放置
-            conf.set(Pname+".UUID",Pdata.getKey().toString());
-            conf.set(Pname+".HP",Pdata.getValue());
+            save_Pdata(Pdata.getKey(),Pdata.getValue(),conf);
         }
         saveConfig();
+    }
+    private void save_Pdata(UUID uid,Integer Pdata_hp,ConfigurationSection conf){
+        String Pname= getServer().getOfflinePlayer(uid).getName();
+        if(Pname==null){return;}//一度もこのサーバーに入ったことがないプレイヤーについては、放置
+        conf.set(Pname+".UUID",uid.toString());
+        conf.set(Pname+".HP",Pdata_hp);
     }
 
     public void setHP(Player player){

@@ -8,14 +8,16 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.server.ServerCommandEvent;
 
 public class ERHE implements Listener {
-    private Max_hp main;
+    private final Max_hp main;
     public ERHE(Max_hp m){
         main=m;
     }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event){
-        main.setHP(event.getPlayer());
+        if(!main.Check_Custom(event.getPlayer().getUniqueId())) {
+            main.setHP(event.getPlayer());
+        }
     }
 
     @EventHandler
