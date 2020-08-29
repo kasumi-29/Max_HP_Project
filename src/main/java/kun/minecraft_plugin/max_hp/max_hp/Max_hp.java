@@ -60,6 +60,10 @@ public final class Max_hp extends JavaPlugin {
                 sender.sendMessage("[!!!ERR!!!]HPの値が不正です。");
                 return false;
             }
+            if(hp<1){
+                sender.sendMessage("[!!!ERR!!!]HPの値が不正です。");
+                return false;
+            }
             DF_HP=hp;
             getConfig().set("default",hp);
             saveConfig();
@@ -95,6 +99,7 @@ public final class Max_hp extends JavaPlugin {
         assert conf != null;
         for (Map.Entry<UUID,Integer> Pdata:Player_HP.entrySet()){
             String Pname= getServer().getOfflinePlayer(Pdata.getKey()).getName();
+            if(Pname==null){continue;}//一度もこのサーバーに入ったことがないので、放置
             conf.set(Pname+".UUID",Pdata.getKey().toString());
             conf.set(Pname+".HP",Pdata.getValue());
         }
