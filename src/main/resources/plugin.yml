@@ -11,7 +11,7 @@ commands:
     description: "最大HPを設定します。<MaxHP>は、ハート0.5個分で1とカウントし、1以上の値を取ります。\
     ここで設定した値は、 config.yml へ即時、反映されます。"
     permission: op
-    usage: "/<command> [Player] <MaxHP>"
+    usage: "/<command> <Player> <MaxHP>"
   set-default-hp:
     description: "デフォルトの最大HPを設定します。config.ymlと現在接続中の全員に即時、反映されます。"
     permission: op
