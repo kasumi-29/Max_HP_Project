@@ -64,9 +64,9 @@ README.md で
 大将・中将・歩兵を設定し、それぞれHPが違う、といったPVP戦も考えられます。
 - さらに「 [俺の屍を超えられない プラグイン](https://github.com/kasumi-29/over_my_Dead_body) 」の難易度調整にも利用できます。
 
-## 推奨環境
-- まだテスト中です
+## 動作確認済
+- Java 13  
+CraftBukkit 1.16.2
 
 ## ダウンロード
-現在開発中です
-- [ ~~ダウンロードはこちら~~ ](https://github.com/kasumi-29/Max_HP_Project/releases/tag/v2.1.0)
+- [ ダウンロードはこちら ](https://github.com/kasumi-29/Max_HP_Project/releases/tag/v2.1.0)
